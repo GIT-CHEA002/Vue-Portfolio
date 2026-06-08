@@ -1,6 +1,9 @@
-<script setup></script>
+<script setup>
+import { RouterView } from "vue-router";
+import Navbar from "./components/Navbar/Navbar.vue";
+
+</script>
 <template>
-  <div>
-    This is vue Course
-  </div>
+  <Navbar />
+  <RouterView class="px-12" />
 </template>
