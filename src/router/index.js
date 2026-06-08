@@ -1,6 +1,6 @@
 import AboutView from "@/views/AboutView.vue";
 import ContactView from "@/views/ContactView.vue";
-import HomeView from "@/views/HomeView.vue";
+import HomeView from "@/views/Home/HomeView.vue";
 import PorfolioView from "@/views/PorfolioView.vue";
 import { createRouter, createWebHistory } from "vue-router";
 
