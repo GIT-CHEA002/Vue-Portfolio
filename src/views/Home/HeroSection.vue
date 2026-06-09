@@ -5,7 +5,7 @@ import SecondaryNavigationButton from '@/components/buttons/SecondaryNavigationB
 <template>
   <section class="relative h-[90vh] w-full md:w-[70%]  flex flex-col justify-center space-y-6 
 ">
-    <div class="absolute top-0 left-80 w-[600px] h-[600px] rounded-full pointer-events-none mix-blend-multiply filter blur-[120px] opacity-80 transition-colors duration-500
+    <div class="absolute top-0 left-80 md:w-[400px] md:h-[400px] lg:w-[600px] lg:h-[600px] rounded-full pointer-events-none mix-blend-multiply filter blur-[120px] opacity-80 transition-colors duration-500
     bg-cyan-200/50 dark:bg-cyan-200">
     </div>
     <div

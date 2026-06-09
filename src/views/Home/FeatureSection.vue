@@ -26,9 +26,10 @@ const cards = [
 
 </script>
 <template>
-  <section class="min-h-[100vh] w-full px-4 sm:px-8 md:px-12 border-t-2 border-black dark:bg-black py-8">
+  <section class=" h-fit w-full px-4 sm:px-8 md:px-12 border-t-2 border-black dark:bg-black py-8">
     <PrimaryTitle />
     <div class="py-8 mt-6 grid md:odd:grid-cols-[3fr_4fr] md:even:grid-cols-[4fr_3fr] gap-12">
+
       <div v-for="(card) in cards" :key="card.id"
         class="relative bg-neutral-900/80 h-fit border rounded border-cyan-600 dark:border-gray-100/60 overflow-hidden">
         <div class="sm:h-[280px] md:h[300px] lg:h-[350px]">
@@ -42,32 +43,30 @@ const cards = [
               class="uppercase text-cyan-600 text-xs md:text-sm dark:text-cyan-400 tracking-wide leading-normal font-light">
               {{ card.type }}
             </h1>
-            <span class="capitalize mt-0.5 text-sm md:text-base lg:text-lg" font-semibold dark:text-white ">
+            <span class="capitalize mt-0.5 text-sm md:text-base lg:text-lg font-semibold dark:text-white">
               {{ card.name }}
             </span>
           </div>
           <button>
             <ArrowRightIcon class=" w-6 h-6 text-cyan-600 dark:text-cyan-400" />
-            </button>
-          </div>
-        </div>
-        <div
-          class="w-full space-y-4 h-[350px] px-4 md:px-8 lg:px-16 flex flex-col  justify-center  border rounded border-cyan-600 dark:border-cyan-400 bg-gray-200/90 backdrop-blur-md dark:bg-neutral-900/80 ">
-          <h1 class="font-bold text-black dark:text-white text-lg md:text-xl lg:text-2xl">See the complete archives
-            of
-            excellence.</h1>
-          <p class="text-sm md:text-base lg:text-lg brightness-90">
-            Every pixel is placed with intention. Every line of code is optimized for the hightest high-performance
-            standards
-          </p>
-          <h1
-            class="flex items-center tracking-wider text-sm cursor-pointer md:text-base text-cyan-600 dark:text-cyan-400 hover:drop-shadow-[0_2px_8px_rgba(6,182,212,0.5)]">
-            Explore
-            Full
-            Portfolio
-            <ArrowRightIcon class="w-4 h-4 ms-2" />
-          </h1>
+          </button>
         </div>
       </div>
+      <div
+        class="w-full space-y-4 h-[350px] px-4 md:px-8 lg:px-16 flex flex-col  justify-center  border rounded border-cyan-600 dark:border-cyan-400 bg-gray-200/90 backdrop-blur-md dark:bg-neutral-900/80 ">
+        <h1 class="font-bold text-black dark:text-white text-lg md:text-xl lg:text-2xl">See the complete archives of
+          excellence.</h1>
+        <p class="text-sm md:text-base lg:text-lg brightness-90">
+          Every pixel is placed with intention. Every line of code is optimized for the hightest high-performance
+          standards
+        </p>
+        <h1
+          class="flex items-center tracking-wider text-sm cursor-pointer md:text-base text-cyan-600 dark:text-cyan-400 hover:drop-shadow-[0_2px_8px_rgba(6,182,212,0.5)]">
+          Explore Full Portfolio
+          <ArrowRightIcon class="w-4 h-4 ms-2" />
+        </h1>
+      </div>
+
+    </div>
   </section>
 </template>
