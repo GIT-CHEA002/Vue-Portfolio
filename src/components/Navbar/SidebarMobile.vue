@@ -1,6 +1,7 @@
 <script setup>
 import { MapIcon, MoonIcon, ShareIcon, SunIcon, XMarkIcon } from "@heroicons/vue/16/solid";
 import { defineProps } from "vue";
+import SidebarNavLink from "./SidebarNavLink.vue";
 defineProps({
   sidebarOpen: {
     type: Boolean,
@@ -31,78 +32,13 @@ defineProps({
         </button>
       </div>
       <div class="w-full pt-12 px-3 space-y-7">
-        <RouterLink to="/" :class="[
-          'flex',
-          'items-center',
-          'w-full px-5',
-          'py-2 rounded-lg',
-          'uppercase ',
-          'tracking-widest',
-          'text-sm',
-          'font-semibold',
-          'transition-all',
-          'duration-300',
-          isActiveLink('/')
-            ? 'shadow-[0_0_10px_rgba(6,182,212,0.25)]  border-l-4 border-cyan-400 text-cyan-600 dark:text-cyan-400  bg-cyan-100 dark:bg-cyan-950/60'
-            : ' text-black dark:text-white hover:shadow-[0_0_20px_rgba(6,182,212,0.45)] hover:border-l-4 border-cyan-400 hover:text-cyan-600 hover:bg-cyan-100 dark:hover:bg-cyan-900/60',
-        ]">
-          <HomeIcon class="w-6 h-6 me-3" />
-          HOME
-        </RouterLink>
-        <RouterLink to="/about" :class="[
-          'flex',
-          'items-center',
-          'w-full px-5',
-          'py-2 rounded-lg',
-          'uppercase ',
-          'tracking-widest',
-          'text-sm',
-          'font-semibold',
-          'transition-all',
-          'duration-300',
-          isActiveLink('/about')
-            ? 'shadow-[0_0_10px_rgba(6,182,212,0.25)]  border-l-4 border-cyan-400 text-cyan-600 dark:text-cyan-400  bg-cyan-100 dark:bg-cyan-950/60'
-            : ' text-black dark:text-white hover:shadow-[0_0_20px_rgba(6,182,212,0.45)] hover:border-l-4 border-cyan-400 hover:text-cyan-600 hover:bg-cyan-100 dark:hover:bg-cyan-900/60',
-        ]">
-          <UserIcon class="w-6 h-6 me-3" />
-          ABOUT
-        </RouterLink>
-        <RouterLink to="/contact" :class="[
-          'flex',
-          'items-center',
-          'w-full px-5',
-          'py-2 rounded-lg',
-          'uppercase ',
-          'tracking-widest',
-          'text-sm',
-          'font-semibold',
-          'transition-all',
-          'duration-300',
-          isActiveLink('/contact')
-            ? 'shadow-[0_0_10px_rgba(6,182,212,0.25)]  border-l-4 border-cyan-400 text-cyan-600 dark:text-cyan-400  bg-cyan-100 dark:bg-cyan-950/60'
-            : ' text-black dark:text-white hover:shadow-[0_0_20px_rgba(6,182,212,0.45)] hover:border-l-4 border-cyan-400 hover:text-cyan-600 hover:bg-cyan-100 dark:hover:bg-cyan-900/60',
-        ]">
-          <EnvelopeIcon class="w-6 h-6 me-3" />
-          CONTACT
-        </RouterLink>
-        <RouterLink to="/portfolio" :class="[
-          'flex',
-          'items-center',
-          'w-full px-5',
-          'py-2 rounded-lg',
-          'uppercase ',
-          'tracking-widest',
-          'text-sm',
-          'font-semibold',
-          'transition-all',
-          'duration-300',
-          isActiveLink('/portfolio')
-            ? 'shadow-[0_0_10px_rgba(6,182,212,0.25)]  border-l-4 border-cyan-400 text-cyan-600 dark:text-cyan-400  bg-cyan-100 dark:bg-cyan-950/60'
-            : ' text-black dark:text-white hover:shadow-[0_0_20px_rgba(6,182,212,0.45)] hover:border-l-4 border-cyan-400 hover:text-cyan-600 hover:bg-cyan-100 dark:hover:bg-cyan-900/60',
-        ]">
-          <BriefcaseIcon class="w-6 h-6 me-3" />
-          PORTFOLIO
-        </RouterLink>
+        <SidebarNavLink v-for="value in [
+          { target: '', title: 'Home' },
+          { target: 'about', title: 'About' },
+          { target: 'portfolio', title: 'Portfolio' },
+          { target: 'contact', title: 'Contact' },
+        ]" :target="value.target" :title="value.title" :toggle-sidebar-open="toggleSidebarOpen"
+          :is-active-link="isActiveLink" />
       </div>
       <div class="px-6 flex-1 flex items-end justify-between">
         <div class="flex items-center ms-3 cursor-pointer">
@@ -116,4 +52,7 @@ defineProps({
       </div>
     </div>
   </Transition>
+  <div>
+
+  </div>
 </template>

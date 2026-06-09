@@ -18,7 +18,8 @@
   const theme = useTheme();
 </script>
   <template>
-    <nav class=" max-w-7xl px-12 py-6 bg-white/80 dark:bg-black/95 flex items-center shadow-lg">
+    <nav
+      class="sticky top-0 z-[999] max-w-7xl px-4 sm:px-8 md:px-12  py-4 md:py-6 bg-white dark:bg-black dark:shadow-cyan-400 shadow-md flex items-center">
       <!-- navigation link -->
       <NavigationLink :is-active-link="isActiveLink" />
       <!-- hire link -->

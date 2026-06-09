@@ -3,6 +3,6 @@
 @tailwind utilities;
 @layer base {
   body {
-    @apply bg-slate-50 text-slate-900 dark:bg-neutral-950 dark:text-neutral-50 transition-colors duration-300;
+    @apply  scroll-smooth bg-slate-50 text-slate-900 dark:bg-neutral-950 dark:text-neutral-50 transition-colors duration-300;
   }
 }
