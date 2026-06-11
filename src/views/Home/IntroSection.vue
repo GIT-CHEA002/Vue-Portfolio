@@ -1,6 +1,7 @@
 <script setup>
 import { CpuChipIcon, SparklesIcon, SquaresPlusIcon } from "@heroicons/vue/16/solid";
 import philosophy from "../../assets/image/philosophy.png"
+import PrimaryIconBox from "@/components/shared/PrimaryIconBox.vue";
 const designPrinciples = [
   {
     id: 1,
@@ -30,11 +31,8 @@ const designPrinciples = [
           <span class="text-cyan-400 ">Quite Confidence</span>
           .
         </h1>
-        <div v-for="(item) in designPrinciples" :key="item.id" class="flex py-6 space-x-3 md:space-x-4 lg:space-x-6">
-          <span
-            class=" h-fit inline-flex items-center justify-center bg-cyan-600  dark:bg-neutral-800/90 p-2 rounded shadow-sm ">
-            <component :is="item.icon" class="w-6 h-6 text-white  dark:text-cyan-400 " />
-          </span>
+        <div v-for="item in designPrinciples" :key="item.id" class="flex py-6 space-x-3 md:space-x-4 lg:space-x-6">
+          <primary-icon-box :component="item.icon" />
           <!-- description -->
           <div class="block space-y-2">
             <h1 class=" uppercase font-bold tracking-wider brightness-110 leading-normal">

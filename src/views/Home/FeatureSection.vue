@@ -29,7 +29,6 @@ const cards = [
   <section class=" h-fit w-full px-4 sm:px-8 md:px-12 border-t-2 border-black dark:bg-black py-8">
     <PrimaryTitle />
     <div class="py-8 mt-6 grid md:odd:grid-cols-[3fr_4fr] md:even:grid-cols-[4fr_3fr] gap-12">
-
       <div v-for="(card) in cards" :key="card.id"
         class="relative bg-neutral-900/80 h-fit border rounded border-cyan-600 dark:border-gray-100/60 overflow-hidden">
         <div class="sm:h-[280px] md:h[300px] lg:h-[350px]">
@@ -66,7 +65,6 @@ const cards = [
           <ArrowRightIcon class="w-4 h-4 ms-2" />
         </h1>
       </div>
-
     </div>
   </section>
 </template>

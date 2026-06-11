@@ -1,4 +1,4 @@
-import AboutView from "@/views/AboutView.vue";
+import AboutView from "@/views/About/AboutView.vue";
 import ContactView from "@/views/ContactView.vue";
 import HomeView from "@/views/Home/HomeView.vue";
 import PorfolioView from "@/views/PorfolioView.vue";
