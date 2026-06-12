@@ -1,5 +1,4 @@
   <script setup>
-  import { RouterLink } from "vue-router";
   import { Bars3Icon, BriefcaseIcon, EnvelopeIcon, HomeIcon, MapIcon, MoonIcon, ShareIcon, SunIcon, UserIcon, XMarkIcon, } from "@heroicons/vue/16/solid";
   import { useRoute } from "vue-router";
   import { ref } from "vue";
