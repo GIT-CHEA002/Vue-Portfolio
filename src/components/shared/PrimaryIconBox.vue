@@ -7,11 +7,15 @@ defineProps({
     required: true,
     default: CpuChipIcon
   },
+  defaultSize: {
+    type: String,
+    default: "w-6 h-6"
+  },
 })
 </script>
 <template>
   <span
     class=" h-fit inline-flex items-center justify-center bg-cyan-600 backdrop-blur-md text-white dark:bg-cyan-400/90  brightness-110 p-2 rounded shadow-lg shadow-cyan-400/10 ">
-    <component :is="icon" class="w-6 h-6  " />
+    <component :is="icon" :class="`${defaultSize}`" />
   </span>
 </template>

@@ -30,8 +30,8 @@
       <!-- toggle sidebar and themes buttons -->
       <div class="flex items-center ms-3 cursor-pointer">
         <button type="button" @click="theme.toggleTheme()">
-          <SunIcon v-if="theme.theme === 'dark'" class="w-6 h-6 me-3 text-black dark:text-white" />
-          <MoonIcon v-if="theme.theme === 'light'" class="w-6 h-6 me-3 text-black dark:text-white " />
+          <SunIcon v-if="theme.theme === 'dark'" class="w-6 h-6  text-black dark:text-white" />
+          <MoonIcon v-if="theme.theme === 'light'" class="w-6 h-6  text-black dark:text-white " />
         </button>
       </div>
       <div class="block md:hidden ms-3">
