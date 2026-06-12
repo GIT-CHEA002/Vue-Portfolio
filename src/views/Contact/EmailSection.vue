@@ -15,7 +15,7 @@ const form = reactive({
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 auto-rows-[150px] gap-8">
       <div
         class=" px-4 py-8 row-span-3 col-span-1 md:col-span-2 lg:col-span-2 rounded bg-gray-200/80 dark:bg-neutral-800/90">
-        <form action="" class="space-y-8">
+        <form action="" class="space-y-6">
           <div class=" block md:flex justify-between space-y-8 md:space-y-0 md:space-x-8 ">
             <div class="block md:w-[50%] space-y-1 px-8">
               <label for="username" class="text-xs sm:text-sm uppercase">Your Name</label>

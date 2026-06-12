@@ -1,5 +1,5 @@
 <script setup>
-import { ShoppingBagIcon } from '@heroicons/vue/16/solid';
+import { IdentificationIcon, ShoppingBagIcon } from '@heroicons/vue/16/solid';
 import { defineProps } from 'vue';
 defineProps({
   isActiveLink: {
@@ -10,12 +10,14 @@ defineProps({
 <template>
   <div class="flex flex-1 items-center">
     <!-- logo -->
-    <div class="flex items-center space-x-2">
-      <ShoppingBagIcon class="w-8 h-8 p-0 m-0 flex-shrink-0  text-cyan-600 dark:text-white" />
-      <h1 class=" mt-2  leading-none flex items-center font-bold text-sm md:text-base text-black dark:text-white">
-        ELITE CRATF
-      </h1>
-    </div>
+    <RouterLink to="/">
+      <div class="flex items-center justify-center space-x-2">
+        <IdentificationIcon class="w-8 h-8 p-0 m-0 flex-shrink-0 text-cyan-600 dark:text-white" />
+        <h1 class="leading-none flex items-center font-bold text-sm md:text-base text-black dark:text-white">
+          SOKCHEA DEV.
+        </h1>
+      </div>
+    </RouterLink>
     <!-- navigation link -->
     <div class=" flex-1 hidden  md:flex justify-center  items-center space-x-6">
       <RouterLink to="/" :class="[
