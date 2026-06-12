@@ -1,5 +1,5 @@
 <script setup>
-import FeatureSection from './FeatureSection.vue';
+import FeatureSection from './FeaturedSection.vue';
 import HeroSection from './HomeHeroSection.vue';
 import IntroSection from './IntroSection.vue';
 

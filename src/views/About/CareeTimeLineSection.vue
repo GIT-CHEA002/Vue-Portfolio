@@ -25,7 +25,7 @@ const workExperiences = [
 ];
 </script>
 <template>
-  <section class="px-4 sm:px-8 md:px-12 w-full py-12">
+  <section class="px-4 sm:px-8 md:px-12 py-12">
     <div class="grid grid-cols-1 md:grid-cols-3 gap-5 ">
       <div class="col-span-1 space-y-8">
         <PrimaryTitle title="Career Timeline" accent-line="w-0" />

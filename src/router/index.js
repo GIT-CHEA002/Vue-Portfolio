@@ -1,7 +1,7 @@
 import AboutView from "@/views/About/AboutView.vue";
 import ContactView from "@/views/ContactView.vue";
 import HomeView from "@/views/Home/HomeView.vue";
-import PorfolioView from "@/views/PorfolioView.vue";
+import PorfolioView from "@/views/Portfolio/PorfolioView.vue";
 import { createRouter, createWebHistory } from "vue-router";
 
 const router = createRouter({
