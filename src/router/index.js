@@ -44,6 +44,14 @@ const router = createRouter({
       }
     },
   ],
+  scrollBehavior(to, from, savePosition) {
+    if (savePosition) {
+      return savePosition;
+    }
+    else {
+    return {top:0}
+    }
+  }
 }); 
 router.afterEach((to) => {
   document.title = to.meta.title || "My Portfolio"
@@ -57,5 +65,6 @@ router.afterEach((to) => {
     link.href = to.meta.pageLogo
   }
 })
+
 
 export default router;

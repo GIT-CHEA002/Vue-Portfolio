@@ -1,21 +1,59 @@
 <script setup>
 import IntroText from '@/components/shared/IntroText.vue';
 import PrimaryIconBox from '@/components/shared/PrimaryIconBox.vue';
+import emailjs from '@emailjs/browser'
 import { ClockIcon, CommandLineIcon, EnvelopeOpenIcon, LinkIcon, MapPinIcon, ShareIcon, UsersIcon } from '@heroicons/vue/16/solid';
-import { reactive } from 'vue';
+import { reactive, ref } from 'vue';
+import { useToast } from 'vue-toastification';
 const form = reactive({
   username: "",
   email: "",
   subject: "",
   message: "",
 })
+const toast = useToast();
+const isSending = ref(false);
+const statusMessage = ref('')
+const sendEmail = async () => {
+  isSending.value = true;
+  statusMessage.value = "";
+  const SERVICE_ID = "service_k1vogqz";
+  const TEMPLATE_ID = "template_lupff3w";
+  const PUBLIC_KEY = "XaOjS5OH117eQSYAL";
+  const payload = {
+    ...form,
+    time: new Date().toLocaleString('en-US', {
+      dateStyle: 'medium',
+      timeStyle: 'short',
+      timeZone: 'Asia/Phnom_Penh'
+    })
+  }
+  try {
+    await emailjs.send(SERVICE_ID, TEMPLATE_ID, payload, PUBLIC_KEY);
+    statusMessage.value = "Message sent successfully";
+    Object.assign(form, {
+      username: "",
+      email: "",
+      subject: "",
+      message: "",
+    })
+    toast.success("Email Send Successful! Thank for your like")
+    console.log("Success")
+  } catch (error) {
+    console.log(error)
+    statusMessage.value = "Failed to send message. Please try again."
+    toast.error(statusMessage.value)
+  } finally {
+    isSending.value = false;
+  }
+}
 </script>
 <template>
   <section class="px-4 sm:px-8 md:px-12 py-24">
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 auto-rows-[150px] gap-8">
       <div
         class=" px-4 py-8 row-span-3 col-span-1 md:col-span-2 lg:col-span-2 rounded bg-gray-200/80 dark:bg-neutral-800/90">
-        <form action="" class="space-y-6">
+        <form @submit.prevent="sendEmail" class="space-y-6">
           <div class=" block md:flex justify-between space-y-8 md:space-y-0 md:space-x-8 ">
             <div class="block md:w-[50%] space-y-1 px-8">
               <label for="username" class="text-xs sm:text-sm uppercase">Your Name</label>
@@ -35,20 +73,17 @@ const form = reactive({
           </div>
           <div class="block space-y-1 px-8">
             <label for="subject" class="text-xs sm:text-sm uppercase">Your Message</label>
-            <textarea name="subject" id="subject" minlength="20"
+            <textarea name="messsage" id="messsage" minlength="20"
               placeholder="Tell me about your project goal and timelines" required v-model="form.message"
               class="block w-full h-24 rounded resize-none focus:outline-none focus:border-b border-cyan-600 dark:border-cyan-400 py-2 px-3 text-sm md:text-md dark:bg-black/90 placeholder:text-xs tracking-wider">
             </textarea>
           </div>
           <div class="px-8">
-            <button type="submit" class="uppercase text-sm md:text-md lg:text-base border w-fit
+            <button type="submit" :disabled="isSending" class="uppercase text-sm md:text-md lg:text-base border w-fit
                                         px-3 py-2 rounded-sm  font-bold text-black/90 hover:bg-cyan-700
                                         hover:border-cyan-700 hover:text-white transition-colors duration-300 bg-cyan-600 dark:text-white 
                                         dark:bg-cyan-400 border-cyan-600 dark:border-cyan-400
-                                        dark:hover:bg-cyan-300 dark:hover:border-cyan-300 dark:hover:text-black"
-              @click="() => {
-                console.log(form.username)
-              }">
+                                        dark:hover:bg-cyan-300 dark:hover:border-cyan-300 dark:hover:text-black">
               SendMessage
             </button>
           </div>
