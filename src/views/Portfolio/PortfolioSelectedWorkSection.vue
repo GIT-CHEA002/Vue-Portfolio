@@ -49,7 +49,7 @@ const selectedWorks = [
 </script>
 <template>
   <!-- later we will remove this border bottom at the end of the projects -->
-  <section class="px-4 sm:px-8 md:px-12 py-12 border-b shadow-xl  border-cyan-400">
+  <section class="px-4 sm:px-8 md:px-12 py-12 ">
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 auto-rows-[230px] gap-12 py-8">
       <div v-for="(selectedWork) in selectedWorks" :key="selectedWork.id"
         :class="`relative ${selectedWork.gridStyle} rounded group overflow-hidden`">

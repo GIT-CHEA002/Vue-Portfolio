@@ -7,7 +7,7 @@ import CompentenciesSection from './CompentenciesSection.vue';
 </script>
 <template>
   <div>
-    <AboutHeroSection class="border-b" />
+    <AboutHeroSection />
     <CompentenciesSection />
     <CareeTimeLineSection />
     <AboutCTASection />
