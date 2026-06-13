@@ -5,9 +5,7 @@ import IntroSection from './IntroSection.vue';
 
 </script>
 <template>
-  <div>
-    <HeroSection/>
-    <FeatureSection />
-    <IntroSection />
-  </div>
+  <HeroSection />
+  <FeatureSection />
+  <IntroSection />
 </template>
