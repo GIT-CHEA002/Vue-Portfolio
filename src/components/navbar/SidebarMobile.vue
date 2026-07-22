@@ -52,7 +52,4 @@ defineProps({
       </div>
     </div>
   </Transition>
-  <div>
-
-  </div>
 </template>
